@@ -1,9 +1,10 @@
-import ChildA from './components/childA'
+import React from 'react'
 
 const App = () => {
+
   return (
     <div>
-      <ChildA />
+      
     </div>
   )
 }

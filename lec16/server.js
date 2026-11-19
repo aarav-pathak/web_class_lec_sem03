@@ -1,13 +1,24 @@
 require('dotenv').config();
-const server = require('./src/app');
-const connectDB = require('./src/config/config');
+const server=require('./src/app')
 
-const PORT = process.env.PORT || 3000;
+const PORT=process.env.PORT;
 
-// Connect to MongoDB
-connectDB();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
-server.listen(PORT, (err) => {
-    if (err) console.error(err);
-    console.log(`Server is running at http://localhost:${PORT}`);
-});
+// Hash a password
+async function hashPassword(plainPassword) {
+  const hash = await bcrypt.hash(plainPassword, saltRounds);
+  return hash;
+}
+
+// Verify a password
+async function verifyPassword(plainPassword, hash) {
+  const match = await bcrypt.compare(plainPassword, hash);
+  return match;
+}
+
+
+server.listen(PORT,(err)=>{
+    console.log(`Server is running at ${PORT}`)
+})

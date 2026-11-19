@@ -1,12 +1,9 @@
-import ChildC from './childC'
+import React from 'react'
 
-const ChildB = () => {
+const childB = () => {
   return (
-    <div>
-      <h2>Child B (Pass-through)</h2>
-      <ChildC />
-    </div>
+    <div>childB</div>
   )
 }
 
-export default ChildB
+export default childB

@@ -1,0 +1,406 @@
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px 80px;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 28px 24px 100px;
+  }
+}
+
+/* Floating Mac Dock Navbar */
+.mac-dock-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  box-shadow: var(--dock-shadow);
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  margin-bottom: 32px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .mac-dock-navbar {
+    padding: 14px 26px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Mac Window Controls / Traffic Lights */
+.dock-left-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mac-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.traffic-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.dot-red {
+  background-color: #ff5f56;
+  border: 1px solid #e0443e;
+}
+
+.dot-yellow {
+  background-color: #ffbd2e;
+  border: 1px solid #dea123;
+}
+
+.dot-green {
+  background-color: #27c93f;
+  border: 1px solid #1aab29;
+}
+
+.dock-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dock-logo-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.dock-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .dock-title {
+    font-size: 20px;
+  }
+}
+
+/* Floating Cart Capsule Badge */
+.cart-capsule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.cart-capsule:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.cart-capsule:active {
+  transform: scale(0.96);
+}
+
+.cart-number-pill {
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 11.5px;
+  font-weight: 800;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Filter Dock Bar */
+.category-dock {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+  scrollbar-width: none;
+}
+
+.category-dock::-webkit-scrollbar {
+  display: none;
+}
+
+.category-capsule-btn {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  padding: 7px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-capsule-btn:hover {
+  background: var(--glass-bg-hover);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.category-capsule-btn.active {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.3);
+}
+
+/* Glassmorphism Responsive Grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 560px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (min-width: 920px) {
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Glassmorphism Food Card */
+.glass-food-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .glass-food-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--glass-shadow-hover);
+    border-color: rgba(255, 255, 255, 1);
+  }
+}
+
+.glass-food-card.unavailable {
+  opacity: 0.7;
+}
+
+.glass-food-card.unavailable:hover {
+  transform: none;
+  box-shadow: var(--glass-shadow);
+}
+
+/* Card Image Area */
+.card-media-box {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: rgba(226, 232, 240, 0.6);
+}
+
+@media (min-width: 768px) {
+  .card-media-box {
+    height: 220px;
+  }
+}
+
+.food-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .glass-food-card:hover .food-media-img {
+    transform: scale(1.06);
+  }
+}
+
+.glass-pill-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-primary);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.glass-emoji-pill {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body */
+.card-content-box {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.food-headline {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.food-price-badge {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+  letter-spacing: -0.5px;
+}
+
+.availability-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+.availability-pill.in-stock {
+  color: var(--success-color);
+  background-color: var(--success-bg);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.availability-pill.out-of-stock {
+  color: var(--danger-color);
+  background-color: var(--danger-bg);
+  border-color: rgba(244, 63, 94, 0.2);
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+/* Capsule Style Add to Cart Button */
+.capsule-btn-cart {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  touch-action: manipulation;
+}
+
+.capsule-btn-cart:hover:not(:disabled) {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.capsule-btn-cart:active:not(:disabled) {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+}
+
+.capsule-btn-cart:disabled {
+  background: rgba(203, 213, 225, 0.6);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
